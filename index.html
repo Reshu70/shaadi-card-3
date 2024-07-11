@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    <style>
+        
+        /* section 1 start */
+      body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            animation: gradientAnimation 10s infinite;
+            margin: 0;
+          
+        }
+        /* add animation of linear gradient color on body start */
+        @keyframes gradientAnimation {
+            0% {
+                background: linear-gradient(to right, #ffcccc, #cc99ff);
+            }
+            50% {
+                background: linear-gradient(to right, #cc99ff, #ffcccc);
+            }
+            100% {
+                background: linear-gradient(to right, #ffcccc, #cc99ff);
+            }
+        }
+  /* add animation of linear gradient color on body ends*/
+
+        .card {
+            width: 300px;
+            height: 400px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: all 0.5s ease;
+            cursor: pointer;
+            position: relative;
+            margin-top: 50px;
+        }
+
+
+/* set of para on ganeshji images use css start section 1*/
+
+    .card-front {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column; /* Stacks items vertically */
+           justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease;
+            background: linear-gradient(45deg, #ff0000, #ffa500, #00ff00, #0000ff); /* Example gradient with red, orange, green, and blue */
+      }
+        
+     .card-front p {
+            margin-bottom: 20px; /* Adds some space between the paragraph and the image */
+           text-align: center; /* Center-aligns the text */
+        }
+        
+        .card-front img {
+            border-radius: 20px;
+        }
+        
+/* set of para on ganeshji images use css section 1 ends*/
+
+
+
+
+     .card-front {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease;
+            background: linear-gradient(45deg, #ff0000, #ffa500, #00ff00, #0000ff); /* Example gradient with red, orange, green, and blue */
+           
+    }
+        .card-inner {
+            padding: 20px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .card.open {
+            width: 600px;
+        }
+        .card.open .card-inner {
+            opacity: 1;
+        }
+        .card.open .card-front {
+            opacity: 0;
+            pointer-events: none;
+        }
+        h1 {
+            color: #ff69b4;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #333;
+            line-height: 1.6;
+        }
+        .hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        .heart {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #ff69b4;
+            transform: rotate(45deg);
+            animation: heartfall 3s ease-in infinite;
+        }
+        @keyframes heartfall {
+            0% { transform: translateY(-100%) rotate(45deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(45deg); opacity: 0; }
+        }
+        /* section 1 ends */
+
+
+        /* section 2 start */
+       
+        .event-container {
+            
+            margin: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            
+        }
+
+        .event-item {
+            position: relative;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 15px;
+            padding: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            flex: 1 0 30%;
+            max-width: calc(33.333% - 30px);
+            overflow: hidden;
+        }
+
+        .event-item img {
+            border-radius: 10px;
+            max-height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .event-item h3 {
+            color: rgb(27, 6, 6);
+            margin-top: 15px;
+            font-size: 1.5em;
+        }
+
+        .event-item p {
+            color: rgb(27, 6, 6);
+            margin: 5px 0;
+        }
+
+        .event-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .hover-effect {
+            cursor: pointer;
+        }
+
+        /* Overlay effect */
+        .overlay {
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #e65a5a, #d4ee3f, #49ca49, #42aeb6);
+            color: white;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: top 0.5s;
+            opacity: 0;
+        }
+
+        .event-item:hover .overlay {
+            top: 0;
+            opacity: 1;
+        }
+    
+    
+            .Section2 {
+                margin-top: 100px; /* Adjust this value as needed */
+            }
+
+/* responsive media queary box  start */
+            @media (min-width: 768px) {
+                .event-container {
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+                .event-item {
+                    flex: 0 0 33.333%;
+                    max-width: 33.333%;
+                    padding: 15px;
+                    box-sizing: border-box;
+                    max-width: 30%;
+                }
+            }
+
+            @media (max-width: 1300px) {
+                .event-item {
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+                .event-item img {
+                    margin: 0 auto;
+                }
+            }
+        
+        @media (max-width: 721px) {
+            .event-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .col-md-4 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+        
+/* responsive media queary box ends*/
+        /* section 2 ends*/  
+       
+/* section 3 start */
+        .section3{
+            margin: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            
+        }
+
+
+
+        .bal {
+            background: linear-gradient(45deg, #e65a5a, #d4ee3f, #49ca49, #42aeb6);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            padding:20px;
+        }
+
+        .bal p {
+            font-size: 1.1em;
+            color:white;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .bal h5 {
+            margin-top: 10px;
+            font-weight: bold;
+            color:white;
+            font-weight: bold;
+        }
+
+        .bal img {
+            margin-top: 15px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+        }
+
+        .bal::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('img/smile_img-removebg-preview (1).png') no-repeat center center;
+            background-size: cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .bal-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        @media only screen and (max-width: 441px) {
+            .bal p {
+                font-size: 0.9em;
+            }
+            .bal h5 {
+                font-size: 1em;
+            }
+        }
+    
+
+        /* CSS animation start  */
+.bal-content {
+    animation: textAnimation 4s infinite; /* Adjust animation duration and timing as needed */
+}
+
+@keyframes textAnimation {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-10px);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
+.col-md-6 img {
+    animation: imageAnimation 3s ease-in-out infinite; /* Adjust animation duration and timing as needed */
+}
+
+@keyframes imageAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+ /* CSS animation ends */
+
+/* section 4 start */
+.section4{
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+   
+}
+
+
+
+
+  /* CSS */
+  @media (max-width: 447px){
+    .section4 {
+        flex-direction: column;
+        text-align: center;
+        padding-left: 15px; /* Adjust the amount of padding as needed */
+    }
+  }
+    
+  
+/* section 4 ends */
+
+ 
+        /* section 3 ends */
+
+
+        .address{
+            margin: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around; 
+            padding: 10px; 
+        }
+        </style>
+
+   
+</head>
+<body>
+    <!-- section 1 start -->
+   <div class="card" id="card">
+        <div class="card-front">
+                <p>|| श्री गणेशाय नमः ||<br>
+                  वक्रतुंड महाकाय सूर्यकोटि समप्रभः।<br>
+                  निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥</p>
+            <img src="img/ganesha.avif" class="img-fluid rounded-pill" height="200px" width="200px" style="border-radius: 20px;">
+        </div>
+        <div class="card-inner">
+            <img src="img/ganesha.avif" class="img-fluid rounded-pill" height="100px" width="100px">
+            <h1>Wedding Invitation</h1>
+            <p>You are cordially invited to celebrate the wedding of</p>
+            <h2>Sarah & John</h2>
+            <p>Date: August 15, 2024<br>
+            Time: 2:00 PM<br>
+            Venue: Rosewood Gardens</p>
+        </div>
+    </div>
+
+ 
+    
+    <div class="hearts" id="hearts"></div> 
+<!-- section 1 ends -->
+
+
+<!-- section 2 start -->
+
+<div class="container-fluid">
+    <div class="container Section2 mt-5">
+        <div class="row event-container">
+            <div class="col-md-4 event-item hover-effect mt-5">
+                <img src="img/haldi.jpg" class="img-fluid">
+                <div class="overlay">
+                    <div>
+                        <h3 class="p">Subh Haldi</h3>
+                        <p class="p">Date: [27-07-2024]</p>
+                        <p class="p">Time: 5:00 P.M</p>
+                        <p class="p">Menu: Home</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 event-item hover-effect mt-5">
+                <img src="img/mehendi img.jpg" class="img-fluid">
+                <div class="overlay">
+                    <div>
+                        <h3 class="p">Mehendi</h3>
+                        <p class="p">Date: [27-07-2024]</p>
+                        <p class="p">Time: 5:00 P.M</p>
+                        <p class="p">Menu: Home</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 event-item hover-effect mt-5">
+                <img src="img/subh tilak.jpg" class="img-fluid">
+                <div class="overlay">
+                    <div>
+                        <h3 class="p">Subh Tilak</h3>
+                        <p class="p">Date: [27-07-2024]</p>
+                        <p class="p">Time: 5:00 P.M</p>
+                        <p class="p">Menu: Home</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 event-item hover-effect mt-5">
+                <img src="img/subh vivah.jpg" class="img-fluid">
+                <div class="overlay">
+                    <div>
+                        <h3 class="p">Subh Vivah</h3>
+                        <p class="p">Date: [27-07-2024]</p>
+                        <p class="p">Time: 5:00 P.M</p>
+                        <p class="p">Menu: Home</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 event-item hover-effect mt-5">
+                <img src="img/bidaai.jpg" class="img-fluid">
+                <div class="overlay">
+                    <div>
+                        <h3 class="p">Subh Vivah</h3>
+                        <p class="p">Date: [27-07-2024]</p>
+                        <p class="p">Time: 5:00 P.M</p>
+                        <p class="p">Menu: Home</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 event-item hover-effect mt-5">
+                <img src="img/vadhu.jpg" class="img-fluid">
+                <div class="overlay">
+                    <div>
+                        <h3 class="p">Vadhu Aagaman</h3>
+                        <p class="p">Date: [27-07-2024]</p>
+                        <p class="p">Time: 5:00 P.M</p>
+                        <p class="p">Menu: Home</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- section 2 ends -->
+
+<!-- section 3 start -->
+<div class="container-fluid" >
+    <div class="container">
+        <div class="row section3" style="display: flex; justify-content:center">
+            <div class="col-md-6">
+                <div class="bal">
+                    <div class="bal-content">
+                        <p>How did our little feet come to forget us? Don't forget to come to uncle's wedding.</p>
+                        <h5>Ayush, Mahi</h5>
+                        <img src="img/smile_img-removebg-preview (1).png" alt="Smile Image" height="50" width="50">
+                        <img src="img/boy-removebg-preview (1).png" class="img-fluid"  height="50" width="50">
+                    </div>
+                </div>
+            </div>
+           <div class="col-md-6">
+           
+           </div>
+        </div>
+    </div>
+</div>
+<!-- section 3 ends -->
+
+<!-- section 4 start -->
+
+<div class="container mt-5 p-5" style=" border-radius: 15px;">
+
+    <div class="row text-white section4"  style="display: flex; justify-content-space: between; align-items: center;">
+      <p></p>
+      
+      <div class="col-md-12">
+  <div class="bal p-3">
+  <div class="row">
+    <div class="col-md-3">
+      <p class="p">Dear relative,</p>
+    </div>
+    <div class="col-md-3 mt-5">
+      <p class="p">By God's infinite mercy</p>
+    </div>
+  </div>
+  <!-- doli start -->
+  <div class="row mt-5 text-center align-items-center">
+    <div class="col-md-3">
+      <p class="p">DESIROUS OF SEEING,<br></p>
+      <p class="p">
+        Ashish Garg<br>
+        Hemlata Garg<br>
+        Vinay Agarwal
+      </p>
+    </div>
+    <div class="col-md-6">
+      <img src="img/boy-removebg-preview.png" class="img-fluid" style="max-height: 70%; max-width: 70%;">
+    </div>
+    <div class="col-md-3">
+      <p class="p">WELCOMING</p>
+      <p class="p">
+        Arvind Singhal<br>
+        Radha Singhal
+      </p>
+    </div>
+  </div>
+  <!-- doli end -->
+  
+  
+  </div>
+      </div>
+    
+    
+    </div>
+  </div>
+
+<!-- section 4 ends-->
+
+<!--Address  section 5 start -->
+<div class="container mt-5 p-5 address" style="display: flex; justify-content-space: between; align-items: center; border-radius: 15px;">
+    <div class="row text-white"  style="display: flex; justify-content-space: between; align-items: center;">
+     <div class="col-md-12">
+      <div class="bal p-3" style="background-color: rgba(240, 174, 7, 0.568);">
+        <div class="row" style="display: flex; justify-content:center; ">
+          <div class="col-md-5">
+            <h2 class="pt-5 p">Address</h2>
+            <p class="pt-4 p">Hotel SAYAJI, MAGENTO MALL<BR>
+              AVANTI VIHAR , RAIPUR<BR>
+              CHATTISGARH
+            </p>
+            <div class="social-icons pb-3" style="margin-top: 20px;">
+              <a href="https://facebook.com" style="margin-right: 10px; text-decoration: none; color: white;">
+                <i class="fab fa-facebook-f" style="font-size: 24px;"></i>
+              </a>
+              <a href="https://twitter.com" style="margin-right: 10px; text-decoration: none; color: white;">
+                <i class="fab fa-twitter" style="font-size: 24px;"></i>
+              </a>
+              <a href="https://instagram.com" style="margin-right: 10px; text-decoration: none; color: white;">
+                <i class="fab fa-instagram" style="font-size: 24px;"></i>
+              </a>
+              <a href="https://linkedin.com" style="margin-right: 10px; text-decoration: none; color: white;">
+                <i class="fab fa-linkedin-in" style="font-size: 24px;"></i>
+              </a>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-5">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3570.7952471245617!2d80.27712277442508!3d26.494536677938314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399c3826d4ebf859%3A0xe9e2ed37cc371552!2sReal%20Victory%20Groups!5e0!3m2!1sen!2sin!4v1715423230207!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+        
+      </div>
+     </div>
+     
+    
+    
+    </div>
+  </div>
+  <!--Address section 5 ends -->
+  
+
+<!-- animation start body-->
+  <script>
+        const card = document.getElementById('card');
+        const hearts = document.getElementById('hearts');
+
+        card.addEventListener('click', () => {
+            card.classList.toggle('open');
+        });
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+            hearts.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        setInterval(createHeart, 300);
+    </script>
+
+    <!-- animation ends -->
+</body>
+</html>
